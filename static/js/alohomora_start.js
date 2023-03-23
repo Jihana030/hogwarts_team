@@ -20,7 +20,7 @@
                 var meta = document.createElement('meta');
                 meta.httpEquiv = 'refresh'
                 meta.name = 'viewport';
-                meta.content = "1.6;URL='/harrypotter_team/views/professor.html'";
+                meta.content = "1.6;URL='/hogwarts_team/views/professor.html'";
                 document.getElementsByTagName('head')[0].appendChild(meta);
                 $audio.play();
             } else {
