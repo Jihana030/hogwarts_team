@@ -1,0 +1,290 @@
+*{margin: 0; padding: 0;}
+
+/* 지정변수 */
+:root {
+    --img-hover: 5vw;
+    --point-color: #b2a069;
+    --text-reverse-color: #fff;
+}
+
+::selection {
+    background-color: var(--point-color);
+    color: var(--text-reverse-color);
+}
+
+@font-face {
+    font-family: 'Eulyoo1945';
+    src: url(../font/Eulyoo1945-Regular.ttf);
+}
+@font-face {
+    font-family: 'Ibarra Real Nova';
+    src: url(../font/IbarraRealNova-Regular.ttf);
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
+}
+
+html {
+    min-width: 100%;
+    min-height: 100%;
+    cursor: url(../img/circle/common/Cursor_Default.png), auto;
+}
+
+body {
+    width: 2000px;
+    height: 2000px;
+    overflow: hidden;
+    background-color: #E7E3DD;
+    box-sizing: border-box;
+    -ms-overflow-style: none;/*스크롤바 막음*/
+}
+
+body::-webkit-scrollbar {/*스크롤바 막음*/
+    display: none;
+}
+
+.comm_search {
+    cursor:  url(../img/circle/common/Cursor_Pointer.png), auto;
+}
+
+/* ---------교수사진----------------------교수사진---------------------------- */
+.proHidden{ /*호버이벤트용*/
+    display: none !important;
+}
+
+#comm_footer {
+    display: none;
+}
+
+.pro_paper {
+    position: absolute;
+    background-image: url('../img/jiwon/paper.jpg');
+    background-repeat: repeat;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    mix-blend-mode: darken;
+}
+
+.pro_cnt { /*이미지 전체 감싸는 div*/
+    width: 100%; height: 100%;
+    padding: 3%;
+    padding-top: 10%;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.proImage{/*이미지의 부모 공통태그*/
+    position: relative;
+}
+
+.pro_imgSize {
+    object-fit: cover;
+}
+
+.pro_hover{/*이미지 호버시 보이는css*/
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0; width: 100%; height: 100%;
+    color: white;
+    font-family: 'Eulyoo1945';
+    font-size: 1rem;
+    line-height: 1.8rem;
+    background-color: #25252540;
+}
+
+.pro_textCnt {/*기숙사로고제외 모두*/
+    position: absolute;
+    bottom: 1rem;
+    left: 0.9rem;
+    margin: 2%;
+    width: 100%;
+    letter-spacing: -0.02em;
+    line-height: 200%;
+}
+
+.pro_house {/*기숙사 로고*/
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+.pro_subject { /*과목*/
+    padding-top: 6%;
+    line-height: 100%;
+}
+
+.pro_name {/*이름*/
+    font-size: 1.75rem;
+    width: 80%;
+    font-weight: 600;
+    border-bottom: 1px solid white;
+    line-height: 150%;
+}
+
+.pro_years {/*재임년도*/
+    font-size: 0.9rem;
+}
+
+/*---------교수사진 위치-------------------교수사진 위치------------------------*/
+.imgNum0 {/*해그리드*/
+    grid-area: 2/2/6/4;
+}
+.imgNum1 {/*플리트윅*/
+    grid-area: 3/7/6/10;
+}
+.imgNum2 {/*트릴로니*/
+    grid-area: 4/12/8/14;
+}
+.imgNum3 {/*덤블도어*/
+    grid-area: 5/16/11/20;
+}
+.imgNum4 {/*후치*/
+    grid-area: 8/1/12/3;
+}
+.imgNum5 {/*맥고나걸*/
+    grid-area: 7/6/11/9;
+}
+.imgNum6 {/*매드아이*/
+    grid-area: 9/10/12/13;
+}
+.imgNum7 {/*아거스*/
+    grid-area: 18/3/22/6;
+}
+.imgNum8 {/*퀴렐*/
+    grid-area: 18/8/21/12;
+}
+.imgNum9 {/*슬러그혼*/
+    grid-area: 17/13/21/16;
+}
+.imgNum10 {/*루핀*/
+    grid-area: 17/17/20/21;
+}
+.imgNum11 {/*스네이프*/
+    grid-area: 23/2/27/6;
+}
+.imgNum12 {/*포피 폼프리*/
+    grid-area: 24/8/28/11;
+}
+.imgNum13 {/*포모나 스프라우트*/
+    grid-area: 25/14/28/18;
+}
+.imgNum14 {/*록하트*/
+    grid-area: 22/19/26/22;
+}
+/*---------교수사진 위치-------------------교수사진 위치------------------------*/
+
+/* --------미디어쿼리---------------------------------------------- */
+@media (max-width: 850px) {
+    html {
+        width: 100%;
+        min-height: 100%;
+    }
+    body {
+        width: 100%;
+        height: 100%;
+        /* 드래그 방지 */
+        /* -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none; */
+        overflow: scroll;
+    }
+
+    /* footer */
+    #comm_footer {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        /* top: calc(7700px + 50%); */
+        bottom: 0;
+    }
+
+    /* 종이질감 */
+    .pro_paper {
+        width: 100%;
+        /* height: auto; */
+        height: calc(100% + 930vw);
+    }
+
+    /* 전체 부모 */
+    .pro_cnt {
+        height: 100%;
+        margin: 0 auto;
+        place-items: center;
+        grid-template-areas: 
+        "num0"
+        "num1"
+        "num2"
+        "num3"
+        "num4"
+        "num5"
+        "num6"
+        "num7"
+        "num8"
+        "num9"
+        "num10"
+        "num11"
+        "num12"
+        "num13"
+        "num14";
+        padding: 10vw;
+    }
+    
+    /* 교수사진 공통태그 */
+    .proImage {
+        /* padding-bottom: var(--img-hover); */
+        margin: 7.5vh 0;
+    }
+
+    /*---------교수사진 위치-------------------교수사진 위치------------------------*/
+    .imgNum0 {/*해그리드*/
+        grid-area: num0;
+    }
+    .imgNum1 {/*플리트윅*/
+        grid-area: num1;
+    }
+    .imgNum2 {/*트릴로니*/
+        grid-area: num2;
+    }
+    .imgNum3 {/*덤블도어*/
+        grid-area: num3;
+    }
+    .imgNum4 {/*후치*/
+        grid-area: num4;
+    }
+    .imgNum5 {/*맥고나걸*/
+        grid-area: num5;
+    }
+    .imgNum6 {/*매드아이*/
+        grid-area: num6;
+    }
+    .imgNum7 {/*아거스*/
+        grid-area: num7;
+    }
+    .imgNum8 {/*퀴렐*/
+        grid-area: num8;
+    }
+    .imgNum9 {/*슬러그혼*/
+        grid-area: num9;
+    }
+    .imgNum10 {/*루핀*/
+        grid-area: num10;
+    }
+    .imgNum11 {/*스네이프*/
+        grid-area: num11;
+    }
+    .imgNum12 {/*포피 폼프리*/
+        grid-area: num12;
+    }
+    .imgNum13 {/*포모나 스프라우트*/
+        grid-area: num13;
+    }
+    .imgNum14 {/*록하트*/
+        grid-area: num14;
+    }
+}
